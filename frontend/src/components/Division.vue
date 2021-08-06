@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="table-responsive">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, impedit.</p>
         <p v-for="(tampil, index) in division" :key="index">
             {{ index+1 }}

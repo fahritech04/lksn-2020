@@ -23,7 +23,7 @@ const routes = [{
         path: '/division',
         name: 'Division',
         component: function() {
-            return import ('../components/Division.vue')
+            return import ('../views/Division.vue')
         }
     }
 ]
