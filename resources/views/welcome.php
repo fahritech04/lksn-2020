@@ -9,6 +9,11 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
+        <!-- Axios -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <!-- Vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -64,8 +69,9 @@
         </style>
     </head>
     <body>
+        <div id="app">
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            <!-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -77,12 +83,14 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif -->
 
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
                 </div>
+                <p v-for="data in division">{{ data.name }}</p>
+                <p>{{ message }}</p>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
@@ -96,5 +104,22 @@
                 </div>
             </div>
         </div>
+        </div>
     </body>
 </html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            division: null
+        },
+        created(){
+            axios
+            .get('')
+            .then(response => {
+                this.division = response.data;
+            })
+        }
+    })
+</script>

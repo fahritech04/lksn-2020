@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 // group division
@@ -29,7 +29,7 @@ Route::get('/', function () {
 //     Route::get('', 'DivisionController@destroy');
 // });
 
-Route::get('/division', 'DivisionController@index');
-Route::get('/division/store', 'DivisionController@store');
+// Route::get('/division', 'DivisionController@index');
+// Route::get('/division/store', 'DivisionController@store');
 
 ?>

@@ -14,8 +14,10 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        $data = Division::all();
-        dump($data);
+        // $data = Division::all();
+        // return view('division', compact('data'));
+
+        return Division::all();
     }
 
     /**
@@ -36,9 +38,6 @@ class DivisionController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('divisions')->insert([
-            'name' =>  $request->nama;
-        ]);
     }
 
     /**
