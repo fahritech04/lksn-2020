@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Division;
+use App\User;
 use Illuminate\Http\Request;
 
-class DivisionController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,9 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        // $data = Division::all();
-        // return view('division', compact('data'));
+        $data = User::all();
 
-        return Division::all();
+        return view('division', compact('data'));
     }
 
     /**
@@ -38,51 +37,51 @@ class DivisionController extends Controller
      */
     public function store(Request $request)
     {
-        return Division::create($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Division  $division
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Division $division)
+    public function show($id)
     {
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Division  $division
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return Division::find($id);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Division  $division
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
-        Division::find($id)->update($request->all());
-        return response()->json('Berhasil di update', 200);
+    public function update(Request $request, $id)
+    {
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Division  $division
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        return Division::destroy($id);
+        //
     }
 }

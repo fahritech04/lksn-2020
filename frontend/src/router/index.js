@@ -19,13 +19,55 @@ const routes = [{
             return import ( /* webpackChunkName: "about" */ '../views/About.vue')
         }
     },
+    // {
+    //     path: '/division',
+    //     name: 'Division',
+    //     component: function() {
+    //         return import ('../views/Division.vue')
+    //     }
+    // },
     {
         path: '/division',
-        name: 'Division',
-        component: function() {
-            return import ('../views/Division.vue')
-        }
-    }
+        component: () =>
+            import ('../views/Division.vue'),
+        children: [{
+                path: '',
+                name: 'Data_Division',
+                component: () =>
+                    import ('../components/Division/Data')
+            },
+            {
+                path: 'add',
+                name: 'Add',
+                component: () =>
+                    import ('../components/Division/Add')
+            },
+            {
+                path: 'edit/:id',
+                name: 'Edit',
+                component: () =>
+                    import ('../components/Division/Edit')
+            }
+        ]
+    },
+    // {
+    //     path: '/user',
+    //     component: () =>
+    //         import ('../views/User.vue'),
+    //     children: [{
+    //             path: '',
+    //             name: 'Data_User',
+    //             component: () =>
+    //                 import ('../components/User/Data')
+    //         },
+    //         {
+    //             path: 'add',
+    //             name: 'Add',
+    //             component: () =>
+    //                 import ('../components/User/Add')
+    //         }
+    //     ]
+    // }
 ]
 
 const router = new VueRouter({

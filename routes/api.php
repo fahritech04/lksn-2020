@@ -18,3 +18,4 @@ use Illuminate\Http\Request;
 // });
 
 Route::resource('division', 'DivisionController');
+Route::resource('user', 'UserController');
