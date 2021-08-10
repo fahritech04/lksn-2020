@@ -50,24 +50,30 @@ const routes = [{
             }
         ]
     },
-    // {
-    //     path: '/user',
-    //     component: () =>
-    //         import ('../views/User.vue'),
-    //     children: [{
-    //             path: '',
-    //             name: 'Data_User',
-    //             component: () =>
-    //                 import ('../components/User/Data')
-    //         },
-    //         {
-    //             path: 'add',
-    //             name: 'Add',
-    //             component: () =>
-    //                 import ('../components/User/Add')
-    //         }
-    //     ]
-    // }
+    {
+        path: '/user',
+        component: () =>
+            import ('../views/User.vue'),
+        children: [{
+                path: '',
+                name: 'Data_User',
+                component: () =>
+                    import ('../components/User/Datauser')
+            },
+            {
+                path: 'add',
+                name: 'Add_user',
+                component: () =>
+                    import ('../components/User/Adduser')
+            },
+            {
+                path: 'edit/:id',
+                name: 'Edituser',
+                component: () =>
+                    import ('../components/User/Edituser')
+            }
+        ]
+    }
 ]
 
 const router = new VueRouter({

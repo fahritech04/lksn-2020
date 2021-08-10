@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Division;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
-
-        return view('division', compact('data'));
+        return User::with('division')->get();
     }
 
     /**
@@ -37,7 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return User::create($request->all());
     }
 
     /**
@@ -59,7 +58,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return User::find($id);
     }
 
     /**
@@ -71,7 +70,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::find($id)->update($request->all());
+        return response()->json('Berhasil di Update', 200);
     }
 
     /**
@@ -82,6 +82,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return User::destroy($id);
     }
 }
