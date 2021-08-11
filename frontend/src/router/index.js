@@ -73,6 +73,30 @@ const routes = [{
                     import ('../components/User/Edituser')
             }
         ]
+    },
+    {
+        path: '/poll',
+        component: () =>
+            import ('../views/Poll.vue'),
+        children: [{
+                path: '',
+                name: 'Data_Poll',
+                component: () =>
+                    import ('../components/Poll/Datapoll')
+            },
+            {
+                path: 'add',
+                name: 'Add_Poll',
+                component: () =>
+                    import ('../components/Poll/Addpoll')
+            },
+            {
+                path: 'edit:/id',
+                name: 'Edit_Poll',
+                component: () =>
+                    import ('../components/Poll/Editpoll')
+            }
+        ]
     }
 ]
 
