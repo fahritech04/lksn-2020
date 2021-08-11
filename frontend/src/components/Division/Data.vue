@@ -1,5 +1,6 @@
 <template>
     <div class="table-responsive container">
+        <router-link :to="{name: 'Add'}" class="btn btn-warning mb-2">New Data</router-link>
         <!-- table -->
         <table class="table table-hover table-bordered">
             <thead>

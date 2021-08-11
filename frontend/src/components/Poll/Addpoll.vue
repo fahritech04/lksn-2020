@@ -14,7 +14,11 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Pembuat</label>
-            <input type="text" v-model="created_by" class="form-control">
+            <select v-model="created_by">
+                <option :value="data.id" v-for="(data, index) in user" :key="index">
+                    {{ data.name }}
+                </option>
+            </select>
         </div>
         <input type="submit" class="btn btn-primary" value="savepoll">
     </form>
@@ -26,8 +30,17 @@ export default {
             title       :   "",
             description :   "",
             deadline    :   "",
-            created_by  :   ""
+            created_by  :   "",
+            user        :   ""
         }
+    },
+    created(){
+        axios
+        .get('http://127.0.0.1:8000/api/user')
+        .then(response => {
+            this.user = response.data;
+            console.log(response)
+        })
     },
     methods: {
         savepoll() {
