@@ -14,8 +14,7 @@ class VoteController extends Controller
      */
     public function index()
     {
-        $votes = Vote::all();
-        dump($votes);
+        // return Vote::all();
     }
 
     /**

@@ -121,7 +121,7 @@ const routes = [{
                     import ('../components/Choice/Editchoice')
             }
         ]
-    }
+    },
 ]
 
 const router = new VueRouter({
