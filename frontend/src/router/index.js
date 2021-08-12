@@ -97,6 +97,30 @@ const routes = [{
                     import ('../components/Poll/Editpoll')
             }
         ]
+    },
+    {
+        path: '/choice',
+        component: () =>
+            import ('../views/Choice.vue'),
+        children: [{
+                path: '',
+                name: 'Data_Choice',
+                component: () =>
+                    import ('../components/Choice/Datachoice')
+            },
+            {
+                path: 'add',
+                name: 'Add_Choice',
+                component: () =>
+                    import ('../components/Choice/Addchoice')
+            },
+            {
+                path: 'edit:/id',
+                name: 'Edit_Choice',
+                component: () =>
+                    import ('../components/Choice/Editchoice')
+            }
+        ]
     }
 ]
 

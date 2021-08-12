@@ -3,8 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Choice extends Model
 {
-    //
+    protected $guarded = [];
+
+    function poll() {
+        return $this->belongsTo(Poll::class);
+    }
 }

@@ -56,9 +56,9 @@ class PollController extends Controller
      * @param  \App\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function edit(Poll $poll)
+    public function edit($id)
     {
-        //
+        return Poll::find($id);
     }
 
     /**
@@ -68,9 +68,10 @@ class PollController extends Controller
      * @param  \App\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Poll $poll)
+    public function update(Request $request, $id)
     {
-        //
+        Poll::find($id)->update($request->all());
+        return response()->json('Berhasil di update', 200);
     }
 
     /**
@@ -79,8 +80,8 @@ class PollController extends Controller
      * @param  \App\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Poll $poll)
+    public function destroy($id)
     {
-        //
+        return Poll::destroy($id);
     }
 }

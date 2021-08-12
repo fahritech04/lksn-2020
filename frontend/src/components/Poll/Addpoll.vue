@@ -31,6 +31,7 @@ export default {
             description :   "",
             deadline    :   "",
             created_by  :   "",
+
             user        :   ""
         }
     },

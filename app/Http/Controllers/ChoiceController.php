@@ -14,8 +14,7 @@ class ChoiceController extends Controller
      */
     public function index()
     {
-        $choice = Choice::all();
-        dump($choice);
+        return Choice::with('poll')->get();
     }
 
     /**
@@ -36,7 +35,7 @@ class ChoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Choice::create($request->all());
     }
 
     /**
@@ -56,9 +55,9 @@ class ChoiceController extends Controller
      * @param  \App\Choice  $choice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Choice $choice)
+    public function edit($id)
     {
-        //
+        return Choice::find($id);
     }
 
     /**
@@ -68,9 +67,10 @@ class ChoiceController extends Controller
      * @param  \App\Choice  $choice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Choice $choice)
+    public function update(Request $request, $id)
     {
-        //
+        Choice::find($id)->update($request->all());
+        return response()->json('Berhasil di update', 200);
     }
 
     /**
@@ -79,8 +79,8 @@ class ChoiceController extends Controller
      * @param  \App\Choice  $choice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Choice $choice)
+    public function destroy($id)
     {
-        //
+        return Choice::destroy($id);
     }
 }
