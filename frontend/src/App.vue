@@ -6,7 +6,8 @@
       <router-link class="me-3 py=2 text-dark text-decoration-none" to="/division">Division</router-link>|
       <router-link class="me-3 py=2 text-dark text-decoration-none" to="/user">User</router-link> |
       <router-link class="me-3 py=2 text-dark text-decoration-none" to="/poll">Polling</router-link> |
-      <router-link class="me-3 py=2 text-dark text-decoration-none" to="/choice">Choice</router-link>
+      <router-link class="me-3 py=2 text-dark text-decoration-none" to="/choice">Choice</router-link> |
+      <router-link class="me-3 py=2 text-dark text-decoration-none" to="/vote">Vote</router-link>
     </div>
     <router-view/>
   </div>

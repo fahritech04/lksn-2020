@@ -122,6 +122,30 @@ const routes = [{
             }
         ]
     },
+    {
+        path: '/vote',
+        component: () =>
+            import ('../views/Vote.vue'),
+        children: [{
+                path: '',
+                name: 'Data_Vote',
+                component: () =>
+                    import ('../components/Vote/Datavote')
+            },
+            {
+                path: 'add',
+                name: 'Add_Vote',
+                component: () =>
+                    import ('../components/Vote/Addvote')
+            },
+            {
+                path: 'edit:/id',
+                name: 'Edit_Vote',
+                component: () =>
+                    import ('../components/Vote/Editvote')
+            }
+        ]
+    }
 ]
 
 const router = new VueRouter({

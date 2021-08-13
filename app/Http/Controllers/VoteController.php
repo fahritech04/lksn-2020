@@ -14,7 +14,7 @@ class VoteController extends Controller
      */
     public function index()
     {
-        // return Vote::all();
+        return Vote::all();
     }
 
     /**
@@ -35,7 +35,7 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Vote::create($request->all());
     }
 
     /**
