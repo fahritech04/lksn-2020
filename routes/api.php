@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
-
+// use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,4 +22,3 @@ Route::resource('division', 'DivisionController');
 Route::resource('user', 'UserController');
 Route::resource('poll', 'PollController');
 Route::resource('choice', 'ChoiceController');
-Route::resource('vote', 'VoteController');
