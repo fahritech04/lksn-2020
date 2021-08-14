@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Choice;
+use App\User;
+use App\Poll;
+use App\Division;
 use App\Vote;
 use Illuminate\Http\Request;
 
@@ -14,7 +18,10 @@ class VoteController extends Controller
      */
     public function index()
     {
-        // return Vote::all();
+        return Vote::with('choice')->get();
+        return Vote::with('user')->get();
+        return Vote::with('poll')->get();
+        return Vote::with('division')->get();
     }
 
     /**
@@ -35,7 +42,7 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Vote::create($request->all());
     }
 
     /**
@@ -55,9 +62,9 @@ class VoteController extends Controller
      * @param  \App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vote $vote)
+    public function edit($id)
     {
-        //
+        return Vote::find($id);
     }
 
     /**
@@ -67,9 +74,10 @@ class VoteController extends Controller
      * @param  \App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vote $vote)
+    public function update(Request $request, $id)
     {
-        //
+        Vote::find($id)->update($request->all());
+        return response()->json('Berhasil di Update', 200);
     }
 
     /**
@@ -78,8 +86,8 @@ class VoteController extends Controller
      * @param  \App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vote $vote)
+    public function destroy($id)
     {
-        //
+        return Vote::destroy($id);
     }
 }

@@ -8,7 +8,7 @@
             <label class="form-label">Polling ID</label>
             <select v-model="edit.poll_id">
                 <option :value="tampil.id" v-for="(tampil, index) in poll" :key="index">
-                    {{ tampil.id }}
+                    {{ tampil.title }}
                 </option>
             </select>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// use App\Vote;
 use App\Division;
 use App\User;
 use Illuminate\Http\Request;
