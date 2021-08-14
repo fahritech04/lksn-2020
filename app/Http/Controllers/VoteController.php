@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Choice;
-use App\User;
-use App\Poll;
-use App\Division;
+// use App\Choice;
+// use App\User;
+// use App\Poll;
+// use App\Division;
 use App\Vote;
 use Illuminate\Http\Request;
 
