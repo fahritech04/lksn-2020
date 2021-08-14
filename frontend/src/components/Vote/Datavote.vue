@@ -16,9 +16,9 @@
                 <tr v-for="(tampil, index) in vote" :key="index">
                     <th scope="row">{{ index+1 }}</th>
                     <td>{{ tampil.choice.choice }}</td>
-                    <td>{{ tampil.user }}</td>
-                    <td>{{ tampil.poll }}</td>
-                    <td>{{ tampil.division }}</td>
+                    <td>{{ tampil.user.name }}</td>
+                    <td>{{ tampil.poll.title }}</td>
+                    <td>{{ tampil.division.name }}</td>
                     <!-- <td>{{ tampil.choice_id }}</td>
                     <td>{{ tampil.user_id }}</td>
                     <td>{{ tampil.poll_id }}</td>

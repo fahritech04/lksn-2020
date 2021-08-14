@@ -18,10 +18,10 @@ class VoteController extends Controller
      */
     public function index()
     {
-        return Vote::with('choice')->get();
-        return Vote::with('user')->get();
-        return Vote::with('poll')->get();
-        return Vote::with('division')->get();
+        return Vote::with('user', 'poll', 'choice', 'division')->get();
+        // return Vote::with('user')->get();
+        // return Vote::with('poll')->get();
+        // return Vote::with('division')->get();
     }
 
     /**
