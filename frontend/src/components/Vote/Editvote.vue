@@ -80,7 +80,7 @@ export default {
         }
     },
     methods: {
-        savevote() {
+        updatevote() {
             var data = {
                 choice_id   :   this.edit.choice_id,
                 user_id     :   this.edit.user_id,

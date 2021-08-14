@@ -91,7 +91,7 @@ const routes = [{
                     import ('../components/Poll/Addpoll')
             },
             {
-                path: 'edit:/id',
+                path: 'edit/:id',
                 name: 'Edit_Poll',
                 component: () =>
                     import ('../components/Poll/Editpoll')
@@ -115,7 +115,7 @@ const routes = [{
                     import ('../components/Choice/Addchoice')
             },
             {
-                path: 'edit:/id',
+                path: 'edit/:id',
                 name: 'Edit_Choice',
                 component: () =>
                     import ('../components/Choice/Editchoice')
@@ -139,7 +139,7 @@ const routes = [{
                     import ('../components/Vote/Addvote')
             },
             {
-                path: 'edit:/id',
+                path: 'edit/:id',
                 name: 'Edit_Vote',
                 component: () =>
                     import ('../components/Vote/Editvote')
